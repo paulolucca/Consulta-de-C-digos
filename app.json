@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "appFalhas",
+    "slug": "appFalhas",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
