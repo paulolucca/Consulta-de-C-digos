@@ -1,24 +1,33 @@
 import React from 'react';
-import { Button as ButtonNativeBase, IButtonProps, Heading, theme} from 'native-base';
+import { Button as ButtonNativeBase, IButtonProps, Heading, theme } from 'native-base';
 
 
-type Props = IButtonProps &{
-    title: string;
+type Props = IButtonProps & {
+  title: string;
 }
 
-export function Button ({title, ...rest } :Props) {
-  
+export function Button({ title, ...rest }: Props) {
+
   return (
     <ButtonNativeBase
-    bg="blueGray.700"
-    h={14}
-    fontSize="sm"
-    rounded="sm"
+      //cor de fundo
+      bg="blueGray.800"
+      //tamanho
+      h={50}
+      //fontes da letra
+      fontSize="sm"
+      //arrodandamento dos cantos
+      rounded="sm"
+      //cor apos o toque
+      _pressed={{ bg: "green.200" }}
 
-    {...rest}
-    
+
+      {...rest}
     >
 
+      <Heading color="white" fontSize="sm">
+        {title}
+      </Heading>
 
 
 

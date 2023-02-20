@@ -1,13 +1,21 @@
-import { StatusBar, NativeBaseProvider } from 'native-base';
-import React from 'react';
+import { StatusBar, NativeBaseProvider, Heading, VStack } from 'native-base';
+import React, {useState} from 'react';
 import { Button } from './src/pages/Components/Button';
 import { Home } from './src/pages/Home/Home';
 import { StyleSheet, Text, View } from 'react-native';
 
+
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
+import { ScaniaFail } from './src/pages/Scania/Scania';
+import { MercedesFail } from './src/pages/Mercedes/mercedes';
+
+
 export default function App() {
   return (
-    <NativeBaseProvider>
-      
+
+ <NativeBaseProvider>
+
       <Home/>
 
       <StatusBar 
@@ -16,21 +24,35 @@ export default function App() {
       translucent
 
       />
-
-      <Button 
-      title='Scania'
-      w="Full"
-      />
-
-      <Button 
-      title='Mercedez'
-      w="full"
-      />
+    </NativeBaseProvider>
 
 
-      </NativeBaseProvider>
-    
+
+
+
+
+
+
   );
 }
 
 
+
+
+export function RouterDefinida() {
+  return (
+    <BrowserRouter>
+
+    <Routes>
+        <Route path="/" element ={<Home/>} />
+        <Route path= "ScaniaFail" element={<ScaniaFail />} />
+        <Route path= "MercedesFail" element={<MercedesFail/>} />
+    </Routes>
+    
+    
+    
+    </BrowserRouter>
+
+
+  );
+}
